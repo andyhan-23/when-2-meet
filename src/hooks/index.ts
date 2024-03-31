@@ -1,1 +1,1 @@
-export { default as useCalendar } from "./useCalendar";
+export { default as useCalendar } from "./use-calendar";
