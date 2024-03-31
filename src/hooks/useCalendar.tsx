@@ -11,7 +11,6 @@ const useCalendar = () => {
     const totalMonthDays = getDaysInMonth(currentDate);
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const startingDayIndex = firstDayOfMonth.getDay();
-
     const prevMonthDays = Array.from({ length: startingDayIndex }).fill(defaultTrashValue);
     const currentMonthDays = Array.from({ length: totalMonthDays }, (_, index) => index + 1);
     const nextMonthDays = Array.from({

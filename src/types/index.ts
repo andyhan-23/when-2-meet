@@ -4,3 +4,8 @@ export type MockEventCreateDataRequest = {
     dataList: string[];
   };
 };
+
+export type CalendarPropsType = {
+  selectedDates: string[];
+  onDateClick: (day: number) => void;
+};
