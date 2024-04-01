@@ -3,9 +3,9 @@ import axios from "axios";
 import { LoginDataRequest } from "@/types";
 import { URL } from "@/apis";
 
-const usePostLogin = (param: number) => {
+const usePostLogin = (id: string | undefined) => {
   const postSignUp = async (formData: LoginDataRequest) => {
-    return await axios.post(`${URL.login}/:${param}`, formData);
+    return await axios.post(`${URL.login}/:${id}`, formData);
   };
   return useMutation({ mutationFn: postSignUp });
 };

@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { Calendar, Logo } from "@/components";
 import { useCalendar, usePostEventCreate } from "@/hooks";
+import { useNavigate } from "react-router-dom";
 
 const InitContainer = () => {
   const [eventName, setEventName] = useState<string>("");
@@ -8,6 +9,7 @@ const InitContainer = () => {
   const { mutate: createEvent } = usePostEventCreate();
   const { currentDate } = useCalendar();
 
+  const navigate = useNavigate();
   const handleEventNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEventName(event.target.value);
   };
@@ -21,6 +23,7 @@ const InitContainer = () => {
       onSuccess(data) {
         console.log("이벤트 요청 성공");
         console.log("Data", data);
+        navigate(`/login/${data.data.eventId}`, { state: data.data.eventName });
       },
       onError(error: Error) {
         console.log("이벤트 요청 실패", error);
