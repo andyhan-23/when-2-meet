@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import { PATH } from "./constatns";
-import { MainPage, LoginPage, EventPage } from "@/pages";
+import { InitPage, LoginPage, EventPage } from "@/pages";
 import Layout from "./layout";
 
 const router = createBrowserRouter([
   {
     path: PATH.main,
     element: <Layout />,
-    children: [{ path: PATH.main, element: <MainPage /> }],
+    children: [{ path: PATH.main, element: <InitPage /> }],
   },
   {
     path: PATH.login,
