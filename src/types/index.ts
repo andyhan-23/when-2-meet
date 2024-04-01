@@ -18,7 +18,7 @@ export type EventCreateDataRequest = {
 };
 
 export type LoginDataRequest = {
-  username: string;
+  userName: string;
   password: string;
 };
 
