@@ -22,8 +22,8 @@ const InitContainer = () => {
         console.log("이벤트 요청 성공");
         console.log("Data", data);
       },
-      onError(error) {
-        console.log("에러", error);
+      onError(error: Error) {
+        console.log("이벤트 요청 실패", error);
       },
     });
   };

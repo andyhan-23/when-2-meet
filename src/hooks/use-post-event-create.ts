@@ -1,10 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
-import { loadData, URL } from "@/apis";
+import { URL } from "@/apis";
 import { EventCreateDataRequest } from "@/types";
+import axios from "axios";
 
 const usePostEventCreate = () => {
   const postEventCreate = async (eventCreateData: EventCreateDataRequest) => {
-    return await loadData(URL.event, "POST", eventCreateData);
+    return await axios.post(URL.event, eventCreateData);
   };
   return useMutation({ mutationFn: postEventCreate });
 };
