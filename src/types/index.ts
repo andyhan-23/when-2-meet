@@ -5,9 +5,21 @@ export type MockEventCreateDataRequest = {
   };
 };
 
+export type MockLoginDataRequest = {
+  body: {
+    userName: string;
+    password: string;
+  };
+};
+
 export type EventCreateDataRequest = {
   eventName: string;
   dataList: string[];
+};
+
+export type LoginDataRequest = {
+  username: string;
+  password: string;
 };
 
 export type CalendarPropsType = {
