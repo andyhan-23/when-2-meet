@@ -1,5 +1,5 @@
 import { rest, ResponseComposition } from "msw";
-import { MockEventCreateDataRequest } from "@/types";
+import { MockEventCreateDataRequest, MockLoginDataRequest } from "@/types";
 
 export const handlers = [
   rest.post("/event", (req: MockEventCreateDataRequest, res: ResponseComposition, ctx) => {
@@ -13,8 +13,19 @@ export const handlers = [
           eventId: 1,
         })
       );
-    } else {
-      return res(ctx.status(400), ctx.json({ message: "이벤트 생성 실패" }));
-    }
+    } else return res(ctx.status(400), ctx.json({ message: "이벤트 생성 실패" }));
+  }),
+  rest.post("/login/:1", (req: MockLoginDataRequest, res: ResponseComposition, ctx) => {
+    const { userName, password } = req.body;
+    if (userName && password) {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          message: "로그인 성공",
+          name: userName,
+          password: password,
+        })
+      );
+    } else return res(ctx.status(400), ctx.json({ message: "로그인 실패" }));
   }),
 ];
