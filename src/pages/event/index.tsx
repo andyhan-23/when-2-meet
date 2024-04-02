@@ -1,5 +1,7 @@
+import { EventContainer } from "@/containers";
+
 const EventPage = () => {
-  return <div>이벤트 페이지</div>;
+  return <EventContainer />;
 };
 
 export default EventPage;
