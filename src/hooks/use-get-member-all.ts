@@ -6,7 +6,7 @@ import { memberAllData } from "@/types";
 const useGetMemberAll = (id: string | undefined) => {
   const getMemberAll = async () => {
     const response = await axios.get(`${URL.event}/:${id}`);
-    return response.data.data;
+    return response.data;
   };
 
   return useQuery<memberAllData[], Error>({
