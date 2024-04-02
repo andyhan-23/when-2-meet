@@ -1,5 +1,6 @@
 import { rest, ResponseComposition } from "msw";
 import { MockEventCreateDataRequest, MockLoginDataRequest } from "@/types";
+import memberAllData from "./__fixtures__/memberAll.json";
 
 export const handlers = [
   rest.post("/event", (req: MockEventCreateDataRequest, res: ResponseComposition, ctx) => {
@@ -27,5 +28,8 @@ export const handlers = [
         })
       );
     } else return res(ctx.status(400), ctx.json({ message: "로그인 실패" }));
+  }),
+  rest.get("/event/:1", (_, res: ResponseComposition, ctx) => {
+    return res(ctx.json(memberAllData));
   }),
 ];

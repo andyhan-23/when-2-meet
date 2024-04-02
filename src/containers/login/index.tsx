@@ -1,10 +1,11 @@
 import { Logo } from "@/components";
 import { usePostLogin } from "@/hooks";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { LoginDataRequest } from "@/types";
 
 const LoginContainer = () => {
+  const navigate = useNavigate();
   const { state: eventName } = useLocation();
 
   const { id } = useParams();
@@ -22,6 +23,7 @@ const LoginContainer = () => {
     e.preventDefault();
     login(loginFormData, {
       onSuccess() {
+        navigate(`/event/${id}`);
         console.log("로그인 성공");
       },
       onError() {
