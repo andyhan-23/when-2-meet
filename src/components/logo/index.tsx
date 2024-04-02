@@ -8,7 +8,7 @@ const Logo = () => {
   };
 
   return (
-    <div className="flex h-24 items-center justify-center">
+    <div className="flex h-24 items-center justify-center ">
       <img src={logo} className="w-32" alt="logo_image" onClick={handleClick} />
     </div>
   );
