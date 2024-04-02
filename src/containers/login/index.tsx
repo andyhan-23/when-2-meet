@@ -33,24 +33,24 @@ const LoginContainer = () => {
   return (
     <>
       <Logo />
-      <div className="flex h-full w-full flex-col items-center justify-center gap-10">
+      <div className="flex  w-full flex-col items-center justify-center gap-10">
         <div className="text-2xl">{eventName}</div>
         <form
           onSubmit={handleSubmit}
           className="flex w-full flex-col items-center justify-center gap-10"
         >
-          <div className="flex w-[70%] flex-col justify-center gap-6">
-            <div className="flex flex-row justify-between">
+          <div className="flex flex-col justify-center gap-6 ">
+            <div className="flex w-80 flex-row justify-around">
               이름
               <input
-                className="h-8 rounded-md bg-slate-100"
+                className="ml-7 h-8 rounded-md bg-slate-100 "
                 type="text"
                 name="userName"
                 value={loginFormData.userName}
                 onChange={handleChange}
               />
             </div>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-around">
               비밀번호
               <input
                 className="h-8 rounded-md bg-slate-100"
@@ -61,8 +61,9 @@ const LoginContainer = () => {
               />
             </div>
           </div>
-          <div className="bg-line-400 flex w-[30%] justify-center rounded-md">
-            <button type="submit" className="h-8 text-white">
+
+          <div className="flex items-center justify-center">
+            <button type="submit" className="h-8 w-72 rounded-lg bg-green-800 text-white">
               로그인
             </button>
           </div>
