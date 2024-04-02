@@ -22,6 +22,22 @@ export type LoginDataRequest = {
   password: string;
 };
 
+export type TimeData = {
+  date: string;
+  time: number[];
+};
+
+export type UserData = {
+  userName: string;
+  timeList: TimeData[];
+};
+
+export type memberAllData = {
+  loginName: string;
+  dateList: string[];
+  userList: UserData[];
+};
+
 export type CalendarPropsType = {
   selectedDates: string[];
   onDateClick: (day: number) => void;
