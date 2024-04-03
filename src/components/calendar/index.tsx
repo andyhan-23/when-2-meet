@@ -20,13 +20,13 @@ const Calendar = ({ selectedDates, onDateClick }: CalendarPropsType) => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex">
-        <button className="mx-3" onClick={handlePreviousMonth}>
+        {/* <button className="mx-3" onClick={handlePreviousMonth}>
           &lt;
-        </button>
+        </button> */}
         <div className="mx-3">{`${currentDate.getMonth() + 1}월`}</div>
-        <button className="mx-3" onClick={handleNextMonth}>
+        {/* <button className="mx-3" onClick={handleNextMonth}>
           &gt;
-        </button>
+        </button> */}
       </div>
       <div className="flex">
         {daysOfWeek.map(day => (
