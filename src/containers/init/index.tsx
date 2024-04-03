@@ -47,7 +47,7 @@ const InitContainer = () => {
       <div className="flex flex justify-center">
         <input
           className="w-80 rounded-lg border border-gray-300 p-2"
-          placeholder="잔디명을 입력하세요"
+          placeholder="주제를 입력하세요!"
           value={eventName}
           onChange={handleEventNameChange}
         />
